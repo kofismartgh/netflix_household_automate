@@ -1,0 +1,39 @@
+{
+  "name": "netflix-auto-confirm",
+  "version": "1.0.0",
+  "description": "Automatically detect Netflix household confirmation emails and submit confirmation",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "start": "tsc --noEmit && tsx --import=extensionless/register src/index.ts",
+    "build": "tsc",
+    "dev": "tsx --import=extensionless/register src/index.ts"
+  },
+  "extensionless": {
+    "lookFor": [
+      "ts"
+    ]
+  },
+  "keywords": [
+    "netflix",
+    "household",
+    "automation",
+    "imap",
+    "email",
+    "auto-confirm"
+  ],
+  "devDependencies": {
+    "@types/imap": "^0.8.42",
+    "@types/node": "^22.13.14",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "@playwright/test": "1.51.1",
+    "dotenv": "^17.2.3",
+    "extensionless": "^1.9.9",
+    "imap": "^0.8.19"
+  }
+}

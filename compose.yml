@@ -1,0 +1,16 @@
+services:
+  netflix-auto-confirm:
+    container_name: netflix-auto-confirm
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ipc: host
+    network_mode: host
+    restart: unless-stopped
+    volumes:
+      # Persist storage state across container restarts
+      - ./tmp:/app/tmp
+    env_file:
+      - .env
+    stdin_open: true
+
